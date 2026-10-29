@@ -1,0 +1,52 @@
+text,label
+"Congratulations! You have won a free prize. Click now!",spam
+"Win money now by clicking this special link!",spam
+"URGENT! You have won a lottery prize!",spam
+"Claim your free gift today!",spam
+"Limited offer! Buy now and get 90 percent discount!",spam
+"You have won $10000. Claim your prize now!",spam
+"Click here to claim your cash reward!",spam
+"Congratulations! You are selected for a special cash prize!",spam
+"Act now and receive your free reward!",spam
+"Exclusive offer! Buy now and save 90 percent!",spam
+"Your account has been suspended. Verify your password immediately.",spam
+"Urgent security alert! Confirm your account now.",spam
+"Your account will be closed unless you verify your information.",spam
+"Click this link to verify your bank account.",spam
+"Your password has expired. Login immediately to restore access.",spam
+"Claim your free smartphone by clicking here!",spam
+"You have been selected for a guaranteed prize.",spam
+"Win a brand new car today. Enter now!",spam
+"Get free money instantly. Click to claim.",spam
+"Special lottery winner notification. Claim now!",spam
+"Earn thousands from home with no experience required.",spam
+"Make money fast with this secret opportunity.",spam
+"Limited time investment opportunity. Act now!",spam
+"Send your details to receive your reward.",spam
+"You are our lucky winner. Contact us immediately.",spam
+
+"Hello, how are you doing today?",ham
+"Please submit your assignment by tomorrow.",ham
+"Are you coming to college today?",ham
+"The meeting is scheduled for 10 AM tomorrow.",ham
+"Can you send me the project report?",ham
+"Your LinkedIn profile is getting hits.",ham
+"New openings based on your profile!",ham
+"See your connections and other people's experience on LinkedIn.",ham
+"You have received a new LinkedIn invitation.",ham
+"Your LinkedIn profile received a new view.",ham
+"Welcome to Emertxe Internship 2026. The kickoff meeting is today.",ham
+"Reminder: Call for Paper at NIT Rourkela.",ham
+"IEEE India Council invites you to a technical event.",ham
+"Your certification exam is scheduled for next week.",ham
+"Please attend the technical seminar tomorrow.",ham
+"Your assignment submission deadline is tomorrow.",ham
+"The project review meeting will be held on Friday.",ham
+"Please find the project report attached.",ham
+"Your internship orientation meeting starts at 10 AM.",ham
+"New internship opportunities are available on the portal.",ham
+"Your course registration has been confirmed.",ham
+"Reminder about your upcoming certification exam.",ham
+"Join the online technical workshop this weekend.",ham
+"Your college timetable has been updated.",ham
+"The department meeting is scheduled for tomorrow.",ham

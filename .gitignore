@@ -1,0 +1,39 @@
+
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.streamlit/secrets.toml
+
+google_oauth_client.json
+credentials.json
+token.json
+token.pickle
+
+data/google_tokens/
+data/email_history.json
+data/subscriptions.json
+
+.vscode/
+# Google OAuth credentials and tokens
+credentials_old.json
+token_backup.json
+google_oauth_client.json
+credentials.json
+token.json
+token.pickle
+*client_secret*.json
+data/google_tokens/
+
+# Private application data
+.env
+.streamlit/secrets.toml
+data/email_history.json
+data/subscriptions.json
+
+# Python environment
+venv/
+.venv/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,388 @@
+/* Smart Email System — Professional UI refresh
+   Uses the existing --app-bg, --surface, --surface-muted, --text-primary,
+   --text-secondary, --border, --border-strong, --accent, --accent-hover,
+   --accent-soft, --focus-ring and --shadow theme tokens from dashboard.py.
+*/
+
+/* ---------- Global canvas and typography ---------- */
+:root {
+    --ui-radius-sm: 8px;
+    --ui-radius-md: 12px;
+    --ui-radius-lg: 16px;
+    --ui-transition: 160ms ease;
+}
+
+.stApp {
+    background: var(--app-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-testid="stAppViewContainer"] {
+    background: var(--app-bg) !important;
+}
+
+[data-testid="stHeader"] {
+    background: color-mix(in srgb, var(--app-bg) 90%, transparent) !important;
+}
+
+.block-container {
+    max-width: 1480px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+[data-testid="stMarkdownContainer"] h1,
+[data-testid="stMarkdownContainer"] h2,
+[data-testid="stMarkdownContainer"] h3 {
+    color: var(--text-primary) !important;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+}
+
+h1 { font-weight: 760 !important; }
+h2 { font-weight: 720 !important; }
+h3 { font-weight: 680 !important; }
+
+p, li, label, [data-testid="stCaptionContainer"] {
+    line-height: 1.6;
+}
+
+[data-testid="stCaptionContainer"] {
+    color: var(--text-secondary) !important;
+}
+
+/* ---------- Sidebar / primary navigation ---------- */
+section[data-testid="stSidebar"] {
+    background: var(--surface) !important;
+    border-right: 1px solid var(--border) !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    background: var(--surface) !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h1,
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h2,
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h3 {
+    color: var(--text-primary) !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] > label {
+    color: var(--text-secondary) !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    margin-bottom: 0.45rem;
+}
+
+/* Each radio option becomes a tidy navigation row */
+section[data-testid="stSidebar"] [data-testid="stRadio"] > div[role="radiogroup"] {
+    gap: 0.28rem !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] > div[role="radiogroup"] > label {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 42px;
+    padding: 0.68rem 0.78rem !important;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-secondary) !important;
+    font-weight: 560;
+    transition: background var(--ui-transition), border-color var(--ui-transition),
+                color var(--ui-transition), transform var(--ui-transition);
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] > div[role="radiogroup"] > label:hover {
+    background: var(--surface-muted) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] > div[role="radiogroup"] > label:has(input:checked) {
+    background: var(--accent-soft) !important;
+    border-color: color-mix(in srgb, var(--accent) 24%, var(--border)) !important;
+    color: var(--accent) !important;
+    font-weight: 700 !important;
+    box-shadow: inset 3px 0 0 var(--accent);
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] > div[role="radiogroup"] > label:has(input:checked) p,
+section[data-testid="stSidebar"] [data-testid="stRadio"] > div[role="radiogroup"] > label:has(input:checked) span {
+    color: var(--accent) !important;
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: var(--border) !important;
+    margin: 1.1rem 0 !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stAlert"] {
+    padding: 0.65rem 0.8rem;
+}
+
+/* ---------- Buttons: primary, secondary and download ---------- */
+.stButton > button,
+.stDownloadButton > button,
+.stFormSubmitButton > button,
+[data-testid="stPopover"] button {
+    min-height: 42px;
+    border-radius: 10px !important;
+    padding: 0.55rem 1rem !important;
+    font-weight: 650 !important;
+    letter-spacing: 0.005em;
+    transition: background var(--ui-transition), border-color var(--ui-transition),
+                box-shadow var(--ui-transition), transform var(--ui-transition);
+}
+
+.stButton > button[kind="primary"],
+.stFormSubmitButton > button[kind="primary"],
+.stDownloadButton > button[kind="primary"] {
+    background: var(--accent) !important;
+    border: 1px solid var(--accent) !important;
+    color: #fff !important;
+    box-shadow: 0 3px 8px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.stButton > button[kind="primary"]:hover,
+.stFormSubmitButton > button[kind="primary"]:hover,
+.stDownloadButton > button[kind="primary"]:hover {
+    background: var(--accent-hover) !important;
+    border-color: var(--accent-hover) !important;
+    box-shadow: 0 5px 14px color-mix(in srgb, var(--accent) 25%, transparent);
+    transform: translateY(-1px);
+}
+
+.stButton > button[kind="secondary"],
+.stFormSubmitButton > button[kind="secondary"],
+.stDownloadButton > button[kind="secondary"] {
+    background: var(--surface) !important;
+    border: 1px solid var(--border-strong) !important;
+    color: var(--text-primary) !important;
+}
+
+.stButton > button[kind="secondary"]:hover,
+.stFormSubmitButton > button[kind="secondary"]:hover,
+.stDownloadButton > button[kind="secondary"]:hover {
+    background: var(--surface-muted) !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+}
+
+.stButton > button:active,
+.stDownloadButton > button:active {
+    transform: translateY(0);
+}
+
+.stButton > button:disabled,
+.stDownloadButton > button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Sidebar sign-out button */
+section[data-testid="stSidebar"] .stButton > button {
+    width: 100%;
+}
+
+/* ---------- Cards and metric tiles ---------- */
+[data-testid="stMetric"] {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--ui-radius-lg) !important;
+    padding: 1rem 1.1rem !important;
+    box-shadow: var(--shadow);
+    transition: border-color var(--ui-transition), transform var(--ui-transition);
+}
+
+[data-testid="stMetric"]:hover {
+    border-color: var(--border-strong) !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--text-secondary) !important;
+    font-size: 0.84rem !important;
+    font-weight: 650 !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--text-primary) !important;
+    font-weight: 760 !important;
+    letter-spacing: -0.035em;
+}
+
+[data-testid="stMetricDelta"] {
+    font-weight: 600 !important;
+}
+
+/* Streamlit bordered containers become consistent panels */
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: var(--border) !important;
+    border-radius: var(--ui-radius-lg) !important;
+    background: var(--surface);
+}
+
+/* ---------- Inputs and forms ---------- */
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input,
+.stDateInput input,
+[data-baseweb="select"] > div,
+[data-testid="stMultiSelect"] [data-baseweb="select"] > div {
+    background: var(--surface) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-strong) !important;
+    border-radius: 10px !important;
+}
+
+.stTextInput input:hover,
+.stTextArea textarea:hover,
+.stNumberInput input:hover,
+.stDateInput input:hover,
+[data-baseweb="select"] > div:hover {
+    border-color: var(--accent) !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+.stNumberInput input:focus,
+.stDateInput input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 18%, transparent) !important;
+}
+
+[data-testid="stTextInput"] label,
+[data-testid="stTextArea"] label,
+[data-testid="stSelectbox"] label,
+[data-testid="stNumberInput"] label,
+[data-testid="stDateInput"] label,
+[data-testid="stCheckbox"] label,
+[data-testid="stRadio"] label,
+[data-testid="stToggle"] label {
+    color: var(--text-primary) !important;
+    font-weight: 560;
+}
+
+/* ---------- Tabs, segmented controls, expanders ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.35rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: var(--text-secondary) !important;
+    font-weight: 650;
+    border-radius: 9px 9px 0 0;
+    padding: 0.7rem 1rem;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--accent) !important;
+    border-bottom-color: var(--accent) !important;
+}
+
+[data-testid="stExpander"] {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--ui-radius-md) !important;
+    overflow: hidden;
+}
+
+[data-testid="stExpander"] summary {
+    color: var(--text-primary) !important;
+    font-weight: 620;
+}
+
+[data-testid="stExpander"] summary:hover {
+    background: var(--surface-muted) !important;
+}
+
+/* ---------- Alerts, status messages, progress ---------- */
+[data-testid="stAlert"] {
+    border-radius: var(--ui-radius-md) !important;
+    border-width: 1px !important;
+}
+
+[data-testid="stProgress"] > div > div {
+    background: var(--accent) !important;
+    border-radius: 99px;
+}
+
+/* ---------- Data tables ---------- */
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--ui-radius-md) !important;
+    overflow: hidden;
+}
+
+[data-testid="stDataFrame"] iframe {
+    border-radius: var(--ui-radius-md);
+}
+
+/* ---------- Charts and select popovers ---------- */
+[data-baseweb="popover"],
+[data-baseweb="menu"],
+[data-baseweb="select"] [role="listbox"] {
+    border: 1px solid var(--border) !important;
+    border-radius: 10px !important;
+    box-shadow: var(--shadow) !important;
+}
+
+[data-baseweb="menu"] li:hover,
+[data-baseweb="select"] [role="option"]:hover {
+    background: var(--accent-soft) !important;
+}
+
+/* ---------- Focus accessibility ---------- */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[role="radio"]:focus-visible,
+[role="tab"]:focus-visible {
+    outline: 3px solid var(--focus-ring) !important;
+    outline-offset: 2px !important;
+}
+
+/* ---------- Mobile / tablet ---------- */
+@media (max-width: 900px) {
+    .block-container {
+        padding-top: 1.25rem;
+        padding-bottom: 2rem;
+    }
+    [data-testid="stMetric"] {
+        padding: 0.85rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .block-container {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    h2 {
+        font-size: 1.45rem !important;
+    }
+    .stButton > button,
+    .stDownloadButton > button,
+    .stFormSubmitButton > button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

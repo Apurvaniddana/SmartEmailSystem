@@ -1,0 +1,19 @@
+You are a senior frontend engineer and UI/UX designer with experience shipping polished, production-ready SaaS web applications. I have an existing smart email system built as a Streamlit web app in Python (`dashboard.py`), and its current interface looks amateur rather than professional. I want you to redesign and restyle the UI so it reads as a finished, trustworthy commercial product, while keeping all existing functionality working.
+
+**Technology constraint:** The current UI is a Python/Django-style project, but the uploaded `dashboard.py` is a Streamlit app that styles itself through custom CSS injected via `st.markdown`. Work within the stack the code actually uses. Do not introduce React/Next.js or migrate the app to another framework unless I explicitly ask for it. Match the existing conventions in `dashboard.py` for how styling, components, and state are handled.
+
+**The core outcome:** A cohesive, modern visual design across the whole interface, covering layout, typography, color system, spacing, navigation, buttons, forms, lists, and all states (hover, focus, empty, loading, error). Deliver it as production-ready code: responsive for desktop and mobile, accessible, and with error states handled.
+
+**Existing design to build from:** `dashboard.py` already uses system sans-serif type, a light gray-blue background, white surfaces, dark navy text, slate secondary text, blue accent buttons, rounded borders, and subtle shadows, plus a dark-theme toggle in the sidebar. Keep the palette direction that works, refine it into a consistent set of tokens (colors, spacing, type scale), and fix what looks unpolished. Preserve the dark theme and make sure it is styled to the same quality as the light theme.
+
+**Scope and constraints:**
+- Preserve all existing features, behavior, and data flows across Dashboard, Email Security, Email History, Gmail Cleanup, Subscriptions, User Feedback, and Settings. This is a UI and presentation overhaul, not a feature rewrite, unless a change is needed to fix a clear usability problem.
+- Keep the emoji-led labels, the four summary metrics, the spam-rate indicator, the classification chart, the status cards, the expandable detection details, the CSV export, the sender grouping and confirm-before-Trash flow in Gmail Cleanup, the bulk subscription actions, and the Settings tabs working exactly as they do now.
+- Preserve the security report HTML generation and download, even though its page is not listed in the sidebar navigation.
+- Keep the design accessible: sufficient color contrast in both themes, keyboard navigation, visible focus states, and layouts that hold up below 768px.
+- Use a consistent design system defined as tokens or CSS variables so the look stays uniform and easy to maintain.
+- Make sure the custom CSS does not break Streamlit's own widgets (tabs, expanders, data tables, inputs, alerts) and that styling targets remain stable across reruns.
+
+**Deliverable:** Concrete code edits to `dashboard.py` (and any CSS it injects), organized by file or block, with a brief note on what changed and why. Where a design decision is a judgment call, choose the option that best suits a clean, professional email product and state the choice.
+
+Attached: `dashboard.py` is the source file to modify. Read it in full before editing, and keep its page structure, navigation, and data handling intact.
